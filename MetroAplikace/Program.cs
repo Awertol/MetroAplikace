@@ -1,7 +1,8 @@
 ﻿using MetroAplikace;
 
 Console.ForegroundColor = ConsoleColor.Green;
-Console.WriteLine(@" |  \/  |    | |            
+Console.WriteLine(@"
+ |  \/  |    | |            
  | \  / | ___| |_ _ __ ___  
  | |\/| |/ _ \ __| '__/ _ \ 
  | |  | |  __/ |_| | | (_) |
