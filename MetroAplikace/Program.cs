@@ -21,11 +21,12 @@ List<string> linkaD = new List<string>
     "Olbrachtova", "Pankrác", "Náměstí Bratří Synků", "Náměstí Míru"
 };
 
-LinkaMetra linkaMetroA = new LinkaMetra(linkaA);
-LinkaMetra linkaMetroD = new LinkaMetra(linkaD);
+LinkaMetra linkaMetroA = new LinkaMetra(linkaA); //linkaA = list na 12. řádku
+LinkaMetra linkaMetroD = new LinkaMetra(linkaD); //linkaD = list na 18. řádku
 
 Console.WriteLine("Vyberte linku metra  A/D");
 string vybranaLinka = Console.ReadLine();
+
 if (vybranaLinka == "A" || vybranaLinka == "D")
 {
     if (vybranaLinka == "A")
@@ -54,6 +55,9 @@ else if(vybranaLinka=="D")
 {
     casCesty = linkaMetroD.ZjistiCas(staniceA, staniceB);
 }
-Console.WriteLine($"Čas cesty je přibližně: {casCesty} minut");
+
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine($"Čas cesty je přibližně: {casCesty} minut"); //vypisování času
+Console.ResetColor();
 
 
