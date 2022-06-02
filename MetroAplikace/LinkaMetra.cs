@@ -27,7 +27,7 @@ namespace MetroAplikace
             string posledniStanice = _nazvyStanic[_nazvyStanic.Count - 1];
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("----------------");
-            Console.WriteLine($"První stanice: {prvniStanice}  -  Poslední stanice: {posledniStanice}");
+            Console.WriteLine($"První stanice: {prvniStanice}\nPoslední stanice: {posledniStanice}");
             Console.WriteLine("----------------");
             Console.ResetColor();
             //dolar = alt gr + ů

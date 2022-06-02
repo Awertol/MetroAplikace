@@ -25,11 +25,32 @@ List<string> linkaD = new List<string>
 LinkaMetra linkaMetroA = new LinkaMetra(linkaA); //linkaA = list na 12. řádku
 LinkaMetra linkaMetroD = new LinkaMetra(linkaD); //linkaD = list na 18. řádku
 
-Console.WriteLine("Vyberte linku metra  A/D");
-string vybranaLinka = Console.ReadLine();
+Console.WriteLine("Stiskněte jakoukoliv klávesu...");
+Console.ReadKey();
 
-if (vybranaLinka == "A" || vybranaLinka == "D")
+while (true)
 {
+    string vybranaLinka = "";
+    while (true)
+    {
+        Console.Clear();
+        Console.WriteLine("Vyberte linku metra  A/D");
+        try
+        {
+            vybranaLinka = Console.ReadLine();
+
+            if (vybranaLinka == "A" || vybranaLinka == "D")
+            {
+                break;
+            }
+        }
+        catch
+        {
+            Console.WriteLine("Neplatný input");
+        }
+    }
+    Console.Clear();
+    Console.WriteLine($"Stanice linky {vybranaLinka}\n");
     if (vybranaLinka == "A")
     {
         linkaMetroA.VypisStanice();
@@ -40,25 +61,24 @@ if (vybranaLinka == "A" || vybranaLinka == "D")
         linkaMetroD.VypisStanice();
         linkaMetroD.PrvniPosledniStanice();
     }
+    Console.WriteLine("Zadej stanici odjezdu");
+    string staniceA = Console.ReadLine();
+    Console.WriteLine("Zadej stanici příjezdu");
+    string staniceB = Console.ReadLine();
+
+    int casCesty = 0;
+    if (vybranaLinka == "A")
+    {
+        casCesty = linkaMetroA.ZjistiCas(staniceA, staniceB);
+    }
+    else if (vybranaLinka == "D")
+    {
+        casCesty = linkaMetroD.ZjistiCas(staniceA, staniceB);
+    }
+
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    Console.WriteLine($"Čas cesty je přibližně: {casCesty} minut"); //vypisování času
+    Console.ResetColor();
+    Console.ReadKey();
 }
-
-Console.WriteLine("Zadej stanici odjezdu");
-string staniceA = Console.ReadLine();
-Console.WriteLine("Zadej stanici příjezdu");
-string staniceB = Console.ReadLine();
-
-int casCesty = 0;
-if (vybranaLinka == "A")
-{
-    casCesty = linkaMetroA.ZjistiCas(staniceA, staniceB);
-}
-else if(vybranaLinka=="D")
-{
-    casCesty = linkaMetroD.ZjistiCas(staniceA, staniceB);
-}
-
-Console.ForegroundColor = ConsoleColor.Cyan;
-Console.WriteLine($"Čas cesty je přibližně: {casCesty} minut"); //vypisování času
-Console.ResetColor();
-
 
