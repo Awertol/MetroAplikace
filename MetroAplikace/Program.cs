@@ -31,6 +31,7 @@ Console.ReadKey();
 while (true)
 {
     string vybranaLinka = "";
+    char pismenoLinky;
     while (true)
     {
         Console.Clear();
@@ -38,8 +39,9 @@ while (true)
         try
         {
             vybranaLinka = Console.ReadLine();
-
-            if (vybranaLinka == "A" || vybranaLinka == "D")
+            vybranaLinka = vybranaLinka.Trim().ToUpper();
+            pismenoLinky = vybranaLinka[0];
+            if (pismenoLinky == 'A' || pismenoLinky == 'D')
             {
                 break;
             }
@@ -50,13 +52,13 @@ while (true)
         }
     }
     Console.Clear();
-    Console.WriteLine($"Stanice linky {vybranaLinka}\n");
-    if (vybranaLinka == "A")
+    Console.WriteLine($"Stanice linky {pismenoLinky}\n");
+    if (pismenoLinky == 'A')
     {
         linkaMetroA.VypisStanice();
         linkaMetroA.PrvniPosledniStanice();
     }
-    if (vybranaLinka == "D")
+    if (pismenoLinky == 'D')
     {
         linkaMetroD.VypisStanice();
         linkaMetroD.PrvniPosledniStanice();
