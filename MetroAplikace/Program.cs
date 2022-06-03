@@ -35,7 +35,9 @@ while (true)
     while (true)
     {
         Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Magenta;
         Console.WriteLine("Vyberte linku metra  A/D");
+        Console.ResetColor();
         try
         {
             vybranaLinka = Console.ReadLine();
@@ -55,12 +57,16 @@ while (true)
     Console.WriteLine($"Stanice linky {pismenoLinky}\n");
     if (pismenoLinky == 'A')
     {
+        Console.ForegroundColor = ConsoleColor.Green;
         linkaMetroA.VypisStanice();
+        Console.ResetColor();
         linkaMetroA.PrvniPosledniStanice();
     }
     if (pismenoLinky == 'D')
     {
+        Console.ForegroundColor = ConsoleColor.Blue;
         linkaMetroD.VypisStanice();
+        Console.ResetColor();
         linkaMetroD.PrvniPosledniStanice();
     }
     Console.WriteLine("Zadej stanici odjezdu");
